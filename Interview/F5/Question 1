@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+$cfg_file = $ARGV[0];
+$src_file = $ARGV[1];
+open(CFGFILE,"<$cfg_file");
+open(SFILE, ">$src_file");
+
+
+while(<CFGFILE>){
+	$line = $_;
+	chomp($line);
+	if($line =~ /^key\s=\s(\w*)$/){
+		$key= $1;
+	}
+}
+
+@key_arr = split("",$key);
+$size = @key_arr;
+for $idx in 0..$size {
+	$key_arr[;
+}
+
+$c_key_str = join(",",@key_arr);
+
+print SFILE "const char key[] = {$c_key_str}";
+
+### C Program
+#char* decode(char* key, int diff){
+#	key[idx] = key[idx] + diff;
+	

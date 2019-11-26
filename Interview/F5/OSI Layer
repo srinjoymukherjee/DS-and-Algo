@@ -1,0 +1,88 @@
+Application Layer:
+====================
+Application layer provides services for Network Applications (Chrome, FireFox, Outlook etc)
+It provides below services:
+File Transfer--> FTP
+Web Surfing--> HTTP/HTTPS
+Emails--> SMTP
+Virtual Terminals-->Telnet
+
+Presentation Layer:
+=====================
+Major Functionalities:
+Translation: Converting Text to Binary (ASCII---->EBCDIC)
+Data Compression (Lossy & Lossless): Reduces the size of binary data for storage efficiency
+Data Encryption and Decryption: Secure Socket Layer (SSL) is used for encryption and de-cryption of data in presentation layer. 
+								Encryption increases data security.
+
+Session Layer:
+=====================
+It uses APIs to establish communication between different applications, running on different Computers (servers/clients). Ex: NETBIOS APIs
+Authentication: Once Username and Password is matched, a Session is established between Client and Server
+Authorization: This is the process, by which a server checks whether a user has access to a particular resource
+Session Management: Keeps track of packets which are downloaded and trace where they go. Ex. Sending Text packets to text files and media packets to media files
+
+Transport Layer:
+=====================
+Data Unit in Transport Layer is called Segment
+It controls the reliability of communication through:
+
+Segmentation: Transport layer divides data received from Session Layer in Segments. Each Segment contains:
+				1. Port Number of Client and Server
+				2. Sequence Number, so that message sequence can be maintained in receiver
+
+Flow Control: It controls the amount of Data Transfer. If it is larger than the Device Capacity, then it lowers it and vice versa
+
+Error Control: 
+				1. Automatic Repeat Request: If any data packet is missing in destination, transport layer re-transmits
+				2. Checksum bit: It uses checksum bit to detect corrupted segments at the receiver
+
+Services:
+				1. Connection-Oriented Transmission---> Transport Control Protocol (TCP):	This is slower as it provides feedback, indicating the data is delivered or not
+																							Lost Data can be re trasnmitted in TCP
+																							Ex: WWW, Emails, FTP etc
+				2. Connection Less Transmission---> User Datagram Protocol (UDP): 	This is faster as it does not provide any feedback
+																					UDP is used in such cases, where it does not matter whether all data has been transferred or not
+																					Ex: Online streaming, Songs, VoIP, DNS etc
+																					
+Network Layer:
+=====================
+It passes Data, from one server to another seating on different Networks
+
+Data Unit in Network layer is called Packet
+
+It is the layer, where routers resides
+
+The function of Network Layer:
+1. Logical Addressing:	IP Addressing done in Network Layer is called Logical Addressing
+						Network layer assignes IP Addresses of sender and receiver in IP Packets
+						IP Addresses are assigned to ensure that each data packet reach the correct destination
+						
+2. Routing:				Routing is a method to move data packets from source to destination
+						It relies on the logical address format of IPV4 and IPV6
+						This is done with IPV4 & IPV6 addresing and Data Masking
+						
+3. Path Determination:	It determines the best possible path for data delivery	
+
+Data Link Layer:
+======================
+Data Unit in Data Link Layer is called Frame
+
+MAC Address: 12 Digit Alphanumeric value, Unique for every NIC
+
+Physical Addressing and Framming: 	This layer adds MAC addresses of sender and receiver in the Packets received from Network Layer and forms data Frames
+									After Physical addressing, data is transferred from one NIC to another NIC via a local media (Copper Fiber, Optical Fiber, Radio Signal etc)
+
+Media Access Control: Controls how data is placed and received from the media
+						Carrier Sense Multiple Access (CSMA): Keeps an eye on media when the shared media is free, this reduces collision
+
+Error control (FCS): Tails of each frame contains bits which are used for error control to check for any error due to media limitations
+
+Physical Layer:
+======================
+This layer converts Bits to Signal and Signals to Bits
+
+
+
+
+

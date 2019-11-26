@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int check_protein(int* a, int n, int k){
+    int stock = 0;
+    for(int idx = 0; idx < n-1; idx++){
+        if((stock + a[idx]) >= k){
+            stock = stock +a[idx] - k;
+        }
+        else
+            return ++idx;
+    }
+    
+    return 0;
+}
+
+int main() {
+    int t, n, k;
+	cin>>t;
+	for(int i = 0; i<t; ++i){
+	    cin>>n;
+	    cin>>k;
+	    
+	    int* a = new int[n];
+	    int result = check_protein(a,n,k);
+	    
+	    if(result == 0)
+	        cout<<yes;
+	    else
+	        cout<<"No "<<result<<endl;
+	        
+	    delete a;
+	    a = NULL;
+	}
+
+	return 0;
+}
