@@ -1,8 +1,0 @@
-1. BST
-2. Heap
-3. Hash
-4. Disjoint Sets
-5. Stack and Queue
-6. Linked List
-7. Graph
-8. AVL Tree
