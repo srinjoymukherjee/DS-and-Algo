@@ -11,25 +11,30 @@ using namespace std;
 typedef pair< int, pair<size_t, size_t> > node_type;
 
 vector<int> mergeKArray(vector< vector< int > > vect){
-	size_t size = vect.size();
-	priority_queue< node_type, vector< node_type >, greater< node_type > > pq;
 	vector< int > result;
-	
-	for(size_t i = 0; i < size; i++){
-		pq.push({vect[i][0], {i,0}});
-	}
-	
-	while(!pq.empty()){
-		result.push_back(pq.top().first);
-		size_t arr_idx = pq.top().second.first;
-		size_t pos_idx = pq.top().second.second;
-		pq.pop();
+	try{
+		size_t size = vect.size();
+		priority_queue< node_type, vector< node_type >, greater< node_type > > pq;
 		
-		if(pos_idx + 1 < vect[arr_idx].size()){
-			node_type next_node = {vect[arr_idx][pos_idx + 1], {arr_idx, pos_idx + 1}};
-			pq.push(next_node);
+	
+		for(size_t i = 0; i < size; i++){
+			pq.push({vect[i][0], {i,0}});
 		}
+	
+		while(!pq.empty()){
+			result.push_back(pq.top().first);
+			size_t arr_idx = pq.top().second.first;
+			size_t pos_idx = pq.top().second.second;
+			pq.pop();
 		
+			if(pos_idx + 1 < vect[arr_idx].size()){
+				node_type next_node = {vect[arr_idx][pos_idx + 1], {arr_idx, pos_idx + 1}};
+				pq.push(next_node);
+			}
+		
+		}
+	}catch(exception e){
+		cout<<e.what()<<endl;
 	}
 	
 	return result;
