@@ -49,7 +49,7 @@ int maxSubSize(int arr[], int size, int key){
 }
 
 int main(){
-        int arr[] = {1, 2, 10, 4};
+        int arr[] = {1, -2, 10, 4};
         int key = 0;
         cout<<"Provide the Key:"<<endl;
         cin>>key;
