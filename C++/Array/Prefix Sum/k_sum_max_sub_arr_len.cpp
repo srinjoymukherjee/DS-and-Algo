@@ -21,7 +21,7 @@ int* prefixSum(int arr[], int size){
 }
 
 int maxSubSearch(int* prefSum, int key, int size){
-        int left = 1, right = size, mid = -1, res = -1;
+        int left = 1, right = size, mid = -1, res = 0;
         bool lessSub = true;
 
         while(left <= right){
@@ -45,11 +45,14 @@ int maxSubSearch(int* prefSum, int key, int size){
 
 int maxSubSize(int arr[], int size, int key){
         int* prefSum = prefixSum(arr, size);
-        return maxSubSearch(prefSum, key, size);
+        int res = maxSubSearch(prefSum, key, size);
+        delete prefSum;
+        prefSum = nullptr;
+        return res;
 }
 
 int main(){
-        int arr[] = {1, -2, 10, 4};
+        int arr[] = {1, 2, 10, 4};
         int key = 0;
         cout<<"Provide the Key:"<<endl;
         cin>>key;
