@@ -35,7 +35,7 @@ void getTwoElements(int arr[], int n,
 	set_bit_no = xor1 & ~(xor1 - 1); 
 
 	/* Now divide elements into two 
-	sets by comparing a rightmost set 
+	sets by comparing the rightmost set 
 	bit of xor1 with the bit at the same 
 	position in each element. Also, 
 	get XORs of two sets. The two 
@@ -68,16 +68,14 @@ void getTwoElements(int arr[], int n,
 /* Driver code */
 int main() 
 { 
-	int arr[] = { 1, 3, 4, 7, 7, 6, 2 }; 
+	int arr[] = { 1, 3, 5, 5, 7, 6, 2 }; 
 	int* x = (int*)malloc(sizeof(int)); 
 	int* y = (int*)malloc(sizeof(int)); 
 	int n = sizeof(arr) / sizeof(arr[0]); 
 
 	getTwoElements(arr, n, x, y); 
-	cout << " The missing element is " << *x << " and the repeating"
-		<< " number is " << *y; 
+	cout <<"The missing and repeating elements are "<<endl;
+	cout<<*x<<" and "<<*y<<endl;
 	getchar(); 
 } 
-
-// This code is contributed by Code_Mech 
 

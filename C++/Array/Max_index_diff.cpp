@@ -1,3 +1,5 @@
+//Given an array arr[], find the maximum j – i such that arr[j] > arr[i].
+
 #include <iostream>
 #include <algorithm>
 
@@ -9,11 +11,10 @@ int main(){
 	
 	int* a = new int[n];
 	
-	int b[] = {35,8,10,3,2,80,30,33,1};
+	int b[] = {35,36,10,3,2,80,30,33,1};
 	a = b;
 	
 	cout<<find_max_index_diff(a, n)<<endl;
-//	cout<<a[1]<<endl;
 	return 0;
 	
 }
@@ -22,7 +23,6 @@ int find_max_index_diff(int*& a, int n){
 	int* LMin = new int[n];
 	int* RMax = new int[n];
 	int maxDif = -1, l = 0, r = 0;
-//	a[1] = 87;
 	LMin[0] = a[0];
 	RMax[n-1] = a[n-1];
 	
@@ -35,7 +35,6 @@ int find_max_index_diff(int*& a, int n){
 	{
 		RMax[r] = max(a[r], RMax[r + 1]);
 	}
-//	cout<<endl;
 	
 	l = 0;
 	r = 0;
@@ -45,7 +44,6 @@ int find_max_index_diff(int*& a, int n){
 		if(LMin[l] < RMax[r])
 		{
 			maxDif = max(maxDif, r - l);
-//			cout<<r<<"\t";
 			r++;
 		}
 		else

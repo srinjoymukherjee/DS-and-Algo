@@ -61,17 +61,17 @@ void do_DFS(vector< vector<int> > &g_list, int size, int s)
 	for(int i = 0; i <= size; i++)
 		visited[i] = false;
 	
-	stack<int> s_bfs;
+	stack<int> s_dfs;
 	visited[s] = true;
-	s_bfs.push(s);
+	s_dfs.push(s);
 	
-	while(!s_bfs.empty())
+	while(!s_dfs.empty())
 	{
-		s = s_bfs.top();
+		s = s_dfs.top();
 		
 		cout<<s<<"\t";
 		
-		s_bfs.pop();
+		s_dfs.pop();
 		
 		for(auto idx = g_list[s].begin(); idx != g_list[s].end(); idx++)
 		{
@@ -79,7 +79,7 @@ void do_DFS(vector< vector<int> > &g_list, int size, int s)
 				continue;
 			cout<<*idx<<"  ";
 			visited[*idx] = true;
-			s_bfs.push(*idx);
+			s_dfs.push(*idx);
 		}
 	}
 	cout<<"\n";

@@ -25,6 +25,7 @@ void cube_pairs(int num){
 int main(){
 	int limit = 101;
 	cout<<"All numbers which are cube pairs in the range of "<<0<<" to "<<limit - 1<<endl;
+	
 	while(--limit){
 		cube_pairs(limit);
 	}

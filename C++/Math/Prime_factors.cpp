@@ -12,7 +12,7 @@ void primeFactors(int n)
 	}
       
     //check for prime factor in the remaining odd Number  
-    for(size_t i = 3; i < sqrt(n); i = i+2){
+    for(size_t i = 3; i <= sqrt(n); i = i+2){
     	while(n%i == 0){
     		n = n/i;
     		cout<<i<<" ";
@@ -30,7 +30,7 @@ void primeFactors(int n)
 /* Driver code */
 int main()  
 {  
-    int n = 35343;  
+    int n = 25;  
     primeFactors(n);  
     return 0;  
 }

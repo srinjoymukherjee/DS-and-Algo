@@ -26,12 +26,14 @@ char find_first_repeating(string s){
 		
 		//set the delta bit, if it is not set
 		checker |= (mover << delta);
+		
+		cout<<mover<<endl;
 	} 
 	return ' ';
 }
 
 int main(){
-	string ip_str = "aAxapqrZPlmcpxY";
+	string ip_str = "Anjkioupncl";
 	cout<<"First repeating char: "<<find_first_repeating(ip_str)<<endl;
 	return 0;
 }
