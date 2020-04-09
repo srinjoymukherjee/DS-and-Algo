@@ -14,7 +14,7 @@ class Graph
     int num_of_ver;
     vector<vector<pair<int,int> > > adj_list;
     vector<long> distance;
-    vector<int> sptSet;
+    vector<pair<int, int> > sptSet;
 public:
     Graph() = delete;
     Graph(int v)
@@ -66,7 +66,8 @@ void Graph::findDijkstra(int src)
             break;
 
         //Push v into sptSet
-        sptSet.push_back(v);
+        sptSet.push_back({v, distance[v]});
+        // sptSetIndex.push_back(v);
 
         for(auto val : adj_list[v])
         {
@@ -94,7 +95,11 @@ int Graph::getNextVertex()
         v = ptr - distance.begin();
 
         //Store the Minimum distance and the corresponding index
-        if(find(sptSet.begin(), sptSet.end(), v) == sptSet.end()
+        if(find_if(sptSet.begin(), sptSet.end(), 
+                [=](pair<int, int> vertex){
+                    return vertex.first == v;
+                }
+            ) == sptSet.end()
             && *ptr < num)
         {
             num = *ptr;
@@ -108,7 +113,7 @@ ostream& operator<<(ostream& out, Graph g)
 {
     for(auto val : g.sptSet)
     {
-        out<<val<<" ";
+        out<<"Vertex: "<<val.first<<" Distance: "<<val.second<<"\t";
     }
 
     return out;
@@ -117,7 +122,7 @@ ostream& operator<<(ostream& out, Graph g)
 int main()
 {
     Graph graph(6);
-    graph.addEdge(1,2,6);
+    graph.addEdge(1,2,2);
     graph.addEdge(1,3,4);
     graph.addEdge(2,4,7);
     graph.addEdge(2,3,5);
