@@ -9,7 +9,7 @@ A[row][col] = min(A[row][col], (A[row][k] + A[k][col]))
 
 #include <bits/stdc++.h>
 
-#define INF 16777216
+#define INF INT_MAX/2
 
 using namespace std;
 
