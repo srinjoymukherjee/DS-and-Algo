@@ -182,8 +182,8 @@ int main()
         long row = 8, col = 8, steps = 0;
 		pair<long, long> s;
 		pair<long, long> d;
-		s = {1,1};
-		d = {5,7};
+		s = {3,4};
+		d = {6,5};
 	
 		long src = getCell(s.first, s.second, col);
 		long dest = getCell(d.first, d.second, col);
