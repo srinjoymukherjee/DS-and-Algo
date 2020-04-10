@@ -68,6 +68,8 @@ vector<long> calcBellFord(Graph g)
 					if(matrix[row][col] != 0
 						&& dist[col] > dist[row] + matrix[row][col])
 					{
+                        //If normalization is happening even after num - 1 times
+                        //then there exists a negative weight loop in the graph
 						if(idx == 0)
 						{                            
 							throw runtime_error("Negative Cycle found");
