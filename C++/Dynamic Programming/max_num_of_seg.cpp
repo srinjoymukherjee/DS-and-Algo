@@ -26,7 +26,6 @@ int calcMaxSeg(int len, vector<int> pieces)
     {
         for(col = 0; col <= len; col++)
         {
-            //
             if(col != 0 && //Check if Col is Non zero
                 col >= pieces[row] && 
                 //Check whether this length is possible
