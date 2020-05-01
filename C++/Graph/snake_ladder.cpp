@@ -73,16 +73,18 @@ int main()
     Graph g(row * col);
     
     //Add Ladder
-    g.addEdge(3, 22, 1);
+    // g.addEdge(3, 22, 1);
     g.addEdge(5, 8, 1);
-    g.addEdge(11, 26, 1);
+    // g.addEdge(11, 26, 1);
     g.addEdge(20, 29, 1);
+    // g.addEdge(24, 50, 1);
 
     //Add Snake
     g.addEdge(27, 1, -1);
     g.addEdge(17, 4, -1);
     g.addEdge(21, 9, -1);
     g.addEdge(19, 7, -1);
+    // g.addEdge(45, 15, -1);
 
     cout<<g.getShortestPath()<<endl;
 
