@@ -35,7 +35,8 @@ int calc_max_sub_arr_size(vector<int> pref_sum, int size, int key)
             }
         }
     }
-
+    
+    //0 will be returned from here
     return max;
 }
 
