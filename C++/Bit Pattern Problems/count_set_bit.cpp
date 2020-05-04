@@ -14,6 +14,7 @@ int count_set_bit(int num)
 
     while(num)
     {
+        //Nullify the rightmost set bit
         num = (num & (num - 1));
         count++;
     }
